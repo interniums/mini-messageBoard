@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body style="display: flex; align-items: center; justify-content: center">
+    <div>
+      <header style="text-align: center">
+        <h1><%= title %></h1>
+        <p style="font-size: large">Welcome to <%= title %>!</p>
+        <button><a href="/new" style="color: black">Add Message</a></button>
+      </header>
+      <section>
+        <% messages.map(function(item) { %>
+        <div
+          style="
+            border: 2px solid black;
+            margin: 15px;
+            padding: 10px 20px;
+            width: max-content;
+          "
+        >
+          <h1 style="color: blue"><%= item.user %></h1>
+          <h3 style="color: gray"><%= item.text %></h3>
+          <p><%= item.added %></p>
+        </div>
+        <% }) %>
+      </section>
+    </div>
+  </body>
+</html>
